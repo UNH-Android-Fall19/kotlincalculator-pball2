@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var operation = "*"
+    var operation = " "
     var oldNumber = ""
     var newOp = true
 
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         textView.setText(buttonClick)
     }
     // Clear Function to clear any variabls
-    fun buttonOperationClear() {
+    fun buttonOperationClear(v: View) {
         textView.setText(" ")
         newOp = false
     }
@@ -98,11 +98,11 @@ class MainActivity : AppCompatActivity() {
         textView.setText(" ")
     }
     //Equal Operator
-    fun buttonOperationEqual() {
+    fun buttonOperationEqual(v: View) {
         val number = textView.text.toString()
         var finNumber: Double? = null
         when (operation) {
-            "+" -> { finNumber = oldNumber.toDouble() + number.toDouble() }
+            "+" -> { finNumber = oldNumber.toDouble() + number.toDouble () }
             "-" -> { finNumber = oldNumber.toDouble() - number.toDouble() }
             "*" -> { finNumber = oldNumber.toDouble() * number.toDouble() }
             "/" -> { finNumber = oldNumber.toDouble() / number.toDouble() }
